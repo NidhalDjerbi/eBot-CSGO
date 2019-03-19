@@ -35,6 +35,7 @@ class ReportManager extends Singleton implements Taskable
         try {
             $this->rest_helper('http://www.esport-tools.net/ebot/report/send', json_encode($report), 'POST');
             Logger::log('Report sent!');
+            Logger::log(json_encode($report));
         } catch (\Exception $e) {
             Logger::error('Unable to send the report to the eSport-tools.net website');
         }
