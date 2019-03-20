@@ -33,7 +33,7 @@ class ReportManager extends Singleton implements Taskable
         );
 
         try {
-            $this->rest_helper('http://localhost:3000/api/reception', json_encode($report), 'POST');
+            $this->rest_helper('http://reception:3000/api/reception', json_encode($report), 'POST');
             Logger::log('Report sent!');
             Logger::log(json_encode($report));
         } catch (\Exception $e) {
